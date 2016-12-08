@@ -1,0 +1,12 @@
+import re
+hand = open('C:\\my\\code\\mbox.txt')
+mylist=list()
+count=0
+for line in hand:
+    line = line.rstrip()
+    x= re.findall('^From .*[a-zA-Z0-9]+@.*[0-9]+', line)
+    y= re.findall('^To:.*[a-zA-Z0-9]+', line)
+    if len(x)>0:
+        print x
+    elif len(y)>0:
+        print y,'\n'
