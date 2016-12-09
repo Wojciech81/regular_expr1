@@ -25,3 +25,22 @@ for line in hand:
     elif len(y)>0:
         for b in y:
             print b,'\n'
+creating mailing list
+import re
+hand = open('C:\\my\\code\\mbox.txt')
+mylist=list()
+count=0
+for line in hand:
+    line = line.rstrip()
+    line= re.findall('^From: (.*[a-zA-Z0-9]+.*)', line)
+    if len(line) > 0:
+        #print line
+
+        for x in line:
+        #print x
+            if line not in mylist:
+                mylist.append(line)
+#print lst
+
+for y in mylist:
+    print y
