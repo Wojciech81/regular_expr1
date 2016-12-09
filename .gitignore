@@ -10,3 +10,18 @@ for line in hand:
         print x
     elif len(y)>0:
         print y,'\n'
+# description how cut two lines from files
+import re
+hand = open('C:\\my\\code\\mbox.txt')
+mylist=list()
+count=0
+for line in hand:
+    line = line.rstrip()
+    x= re.findall('^From .\S[a-zA-Z0-9]+@\S+.*[0-9]+', line)
+    y= re.findall('^To:.*[a-zA-Z0-9]+', line)
+    if len(x)>0:
+        for a in x:
+            print a
+    elif len(y)>0:
+        for b in y:
+            print b,'\n'
